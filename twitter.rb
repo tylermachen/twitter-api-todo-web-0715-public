@@ -16,7 +16,7 @@ class TwitterApi
   end
 
   def most_recent_follower
-    client.followers.first
+    client.friends.first
   end
 
   def find_user_for(username)
@@ -24,6 +24,6 @@ class TwitterApi
   end
 
   def find_followers_for(user)
-    client.followers(user)
+    client.followers(user).take(10)
   end
 end
